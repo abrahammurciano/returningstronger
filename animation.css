@@ -1,0 +1,56 @@
+@keyframes slide-in-up {
+	0% {
+		transform: translateY(100px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-in-down {
+	0% {
+		transform: translateY(-100px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-out-up {
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+}
+
+.slide-in-up {
+	animation: 1s ease-out 0s 1 slide-in-up;
+}
+
+.slide-in-down {
+	animation: 1s ease-out 0s 1 slide-in-down;
+}
+
+.sign-up-section h1 {
+	animation: 0.5s ease-out 0s 1 slide-in-up;
+}
+
+.description {
+	animation: 1s ease-out 0s 1 slide-in-up;
+}
+
+form {
+	animation: 1.5s ease-out 0s 1 slide-in-up;
+}
+
+.names-section {
+	animation: 2.5s ease-out 0s 1 slide-in-up;
+}

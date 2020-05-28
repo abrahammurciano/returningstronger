@@ -1,16 +1,23 @@
-function commit_submit(token) {
-	var name = $('.commit-form input[type="text"]').val();
+$('.commit-form').submit(function(e) {
+	e.preventDefault();
+	var form = $(this);
+	var name = form.find('input[type="text"]').val();
+	if (!validate(name)) {
+		grecaptcha.reset();
+		return false;
+	}
+	var button = form.find('input[type="submit"]');
 	$.ajax({
 		url: 'commit.php',
 		type: 'post',
 		dataType: 'text',
-		data: $('.commit-form').serialize(),
+		data: form.serialize(),
 		success: function(data) {
 			if (data.startsWith('Error:')) {
 				alert(data);
 				location.reload();
 			} else {
-				form_post_process();
+				form_post_process(form, name);
 			}
 		},
 		error: function(xhr, status, error) {
@@ -21,25 +28,26 @@ function commit_submit(token) {
 			location.reload();
 		},
 		beforeSend: function() {
-			var button = $('.commit-form input[type="submit"]');
 			button.addClass('loading');
 			button.attr('disabled', true);
 		},
 		complete: function() {
-			var button = $('.commit-form input[type="submit"]');
 			button.removeClass('loading');
 		}
 	});
+});
+
+function commit_submit() {
+	$('.commit-form').submit();
 }
 
-function form_post_process() {
-	success_message();
-	add_name($('.commit-form input[name="name"]').val());
+function form_post_process(form = $('.commit-form'), name = $('.commit-form input[type="text"]').val()) {
+	success_message(form);
+	add_name(name);
 	remember();
 }
 
-function success_message() {
-	var form = $('.commit-form');
+function success_message(form = $('.commit-form')) {
 	var success = $('.success')
 	var height = form.height();
 	success.css('height', height);
@@ -66,3 +74,19 @@ $(function() {
 		success_message();
 	}
 })
+
+function validate(name) {
+	if (name === '') {
+		alert('You must enter a name.');
+		return false;
+	}
+	if (name.length > 25) {
+		alert('Your name is too long. Please input at most 25 characters.');
+		return false;
+	}
+	if (!/^(?:(?:[A-Za-z]+|[A-Za-z]{1,3}\.|(?:[A-Z]\.)+[A-Z]?)[ -]?){1,3}(?: (?:[A-Z]\.)+[A-Z]?)?$/.test(name)) {
+		alert('That is a made-up name. What is your real name?');
+		return false;
+	}
+	return true;
+}

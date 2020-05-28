@@ -10,12 +10,11 @@
 	margin: 0;
 	font-family: 'DM Mono', monospace;
 	box-sizing: border-box;
-	transition: all 300ms;
 }
 
 body {
-	font-size: 1.4vw;
-	background-image: url('names-background.png');
+	font-size: 1.4vmax;
+	background-image: url('names-background.jpg');
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: top center;
@@ -39,16 +38,15 @@ h2 {
 /* Sign up section */
 
 .sign-up-section-background {
-	background-image: url('top-background.jpg');
+	background-image: url('synagogues.jpg');
 	background-size: cover;
 	background-position: center;
-	background-attachment: fixed;
 	position: relative;
 	z-index: 2;
 }
 
 .sign-up-section-overlay {
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
 .sign-up-section {
@@ -63,6 +61,18 @@ h2 {
 	max-width: 1000px;
 	margin: auto;
 	padding: 50px 0;
+}
+
+.highlight {
+	line-height: 1.5;
+	background-color: rgba(0, 0, 0, 0.7);
+	box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
+}
+
+.photo-credit {
+	padding: 5px;
+	font-size: x-small;
+	color: white;
 }
 
 
@@ -138,10 +148,8 @@ input[type='submit'].loading:hover {
 }
 
 .name {
-	font-size: 3vw;
+	font-size: 3vmax;
 	margin: 20px;
-	transition-property: font-size;
-	transition-duration: 0s;
 }
 
 
@@ -171,13 +179,13 @@ input[type='submit'].loading:hover {
 
 @media screen and (max-width: 1400px) {
 	body {
-		font-size: 2vw;
+		font-size: 1.6vmax;
 	}
 }
 
 @media screen and (max-width: 1100px) {
 	body {
-		font-size: 2.5vw;
+		font-size: 2.2vmax;
 	}
 	.sign-up-section {
 		padding: 100px;
@@ -186,7 +194,10 @@ input[type='submit'].loading:hover {
 
 @media screen and (max-width: 900px) {
 	body {
-		font-size: 3vw;
+		font-size: 2.5vmax;
+	}
+	.sign-up-section-background {
+		background-image: url('synagogues-portrait.jpg');
 	}
 	.sign-up-section {
 		padding: 50px;
@@ -199,6 +210,9 @@ input[type='submit'].loading:hover {
 	}
 	h2 {
 		font-size: 160%;
+	}
+	.sign-up-section {
+		padding: 20px;
 	}
 	input {
 		display: block;
@@ -220,5 +234,12 @@ input[type='submit'].loading:hover {
 	}
 	input[type='text'] {
 		width: 100%;
+	}
+}
+
+@media screen and (max-height: 650px) {
+	.sign-up-section {
+		padding-top: 60px;
+		padding-bottom: 60px;
 	}
 }

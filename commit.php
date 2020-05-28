@@ -2,14 +2,16 @@
 
 $name = $_POST['name'];
 
-if (!preg_match('/^(?:(?:[A-Za-z]+|[A-Za-z]{1,3}\.|(?:[A-Z]\.)+[A-Z]?)[ -]?){1,3}(?: (?:[A-Z]\.)+[A-Z]?)?$/', $name)) {
-	echo ('Error. That is a made-up name. What is your real name?');
-	die();
+if ($name == '') {
+	die('Error: You must enter a name.');
 }
 
 if (strlen($name) > 25) {
-	echo ('Error: Your name is too long.');
-	die();
+	die('Error: Your name is too long. Please input at most 25 characters');
+}
+
+if (!preg_match('/^(?:(?:[A-Za-z]+|[A-Za-z]{1,3}\.|(?:[A-Z]\.)+[A-Z]?)[ -]?){1,3}(?: (?:[A-Z]\.)+[A-Z]?)?$/', $name)) {
+	die('Error: That is a made-up name. What is your real name?');
 }
 
 # Verify captcha
@@ -32,8 +34,7 @@ $context  = stream_context_create($opts);
 $response = file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, $context);
 $result = json_decode($response);
 if (!$result->success) {
-	echo ('Error: Failed captcha.');
-	die();
+	die('Error: Failed captcha.');
 }
 
 $prepend = "$name\n";
@@ -42,4 +43,3 @@ $fileContents = file_get_contents($file);
 file_put_contents($file, $prepend . $fileContents);
 
 echo ('Success');
-die();

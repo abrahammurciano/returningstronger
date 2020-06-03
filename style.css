@@ -13,7 +13,7 @@
 }
 
 body {
-	font-size: 1.4vmax;
+	font-size: 22px;
 	background-image: url('names-background.jpg');
 	background-size: cover;
 	background-attachment: fixed;
@@ -34,6 +34,11 @@ h2 {
 	font-size: 200%;
 }
 
+h3 {
+	font-size: 130%;
+	font-weight: 400;
+}
+
 
 /* Sign up section */
 
@@ -46,7 +51,7 @@ h2 {
 }
 
 .sign-up-section-overlay {
-	background-color: rgba(0, 0, 0, 0.4);
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 .sign-up-section {
@@ -55,6 +60,16 @@ h2 {
 	text-align: center;
 	max-width: 1500px;
 	margin: auto;
+}
+
+.sign-up-section h1,
+.sign-up-section h2,
+.sign-up-section h3 {
+	text-shadow: 0px 0px 15px #000000;
+}
+
+.hebrew-subtitle {
+	font-family: 'Suez One', serif;
 }
 
 .description {
@@ -67,6 +82,7 @@ h2 {
 	line-height: 1.5;
 	background-color: rgba(0, 0, 0, 0.7);
 	box-shadow: 10px 0 0 rgba(0, 0, 0, 0.7), -10px 0 0 rgba(0, 0, 0, 0.7);
+	font-family: inherit;
 }
 
 .photo-credit {
@@ -83,6 +99,7 @@ input {
 	border-radius: 10px;
 	border: 0;
 	font-size: 120%;
+	box-shadow: 0px 0px 20px #000000;
 }
 
 input:focus {
@@ -148,7 +165,7 @@ input[type='submit'].loading:hover {
 }
 
 .name {
-	font-size: 3vmax;
+	font-size: 36px;
 	margin: 20px;
 }
 
@@ -177,25 +194,13 @@ input[type='submit'].loading:hover {
 
 /* Media queries */
 
-@media screen and (max-width: 1400px) {
-	body {
-		font-size: 1.6vmax;
-	}
-}
-
 @media screen and (max-width: 1100px) {
-	body {
-		font-size: 2.2vmax;
-	}
 	.sign-up-section {
 		padding: 100px;
 	}
 }
 
 @media screen and (max-width: 900px) {
-	body {
-		font-size: 2.5vmax;
-	}
 	.sign-up-section-background {
 		background-image: url('synagogues-portrait.jpg');
 	}

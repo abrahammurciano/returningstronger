@@ -39,7 +39,8 @@
 	animation: 1s ease-out 0s 1 slide-in-down;
 }
 
-.sign-up-section h1 {
+.sign-up-section h1,
+.sign-up-section h2 {
 	animation: 0.5s ease-out 0s 1 slide-in-up;
 }
 

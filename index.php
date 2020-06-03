@@ -24,7 +24,7 @@
 				</h2>
 				<h3>
 					<span class="highlight">
-						Hashem has very kindly given us <br> the merit to return to His Home!
+						Hashem has very kindly given us the merit to return to His Home!
 					</span>
 				</h3>
 				<div class="description">

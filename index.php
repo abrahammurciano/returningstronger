@@ -25,6 +25,7 @@
 				<div class="description">
 					<span class="highlight">
 						Hashem has very kindly given us the merit to return to His Home!
+						<br>
 						Let's commit for the next 30 days to switch our mobile phones onto flight mode before
 						entering the Bet Hakeneset and not converse inside the synagogue.
 					</span>

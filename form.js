@@ -57,6 +57,9 @@ function success_message(form = $('.commit-form')) {
 }
 
 function add_name(name) {
+	var span = $('span.count');
+	span.text(parseInt(span.text()) + 1);
+
 	var name_element = $(document.createElement('div'));
 	name_element.addClass('name');
 	name_element.text(name);

@@ -26,7 +26,7 @@
 					<span class="highlight">
 						Hashem has very kindly given us the merit to return to His Home!
 						<br>
-						Let's commit for the next 30 days to switch our mobile phones onto flight mode before
+						Let's commit בלי נדר for the next 30 days to switch our mobile phones onto flight mode before
 						entering the Bet Hakeneset and not converse inside the synagogue.
 					</span>
 				</div>
@@ -40,25 +40,29 @@
 		</div>
 	</div>
 	<div class="names-section-shadow">
+		<?php
+
+		$names = "";
+		$count = 0;
+
+		$handle = fopen("names.dat", "r");
+		if ($handle) {
+			while (($line = fgets($handle)) !== false) {
+				$names .= "<div class='name'>$line</div>\n";
+				++$count;
+			}
+			fclose($handle);
+		} else {
+			echo ('There has been an error fetching the names.');
+		}
+
+		?>
 		<div class="names-section">
 			<h1>
-				Who has committed?
+				<span class="count"><?php echo ($count); ?></span> people have committed!
 			</h1>
 			<div class="names">
-				<?php
-
-				$handle = fopen("names.dat", "r");
-				if ($handle) {
-					while (($line = fgets($handle)) !== false) {
-						echo ("<div class='name'>$line</div>\n");
-					}
-
-					fclose($handle);
-				} else {
-					echo ('There has been an error fetching the names.');
-				}
-
-				?>
+				<?php echo ($names); ?>
 			</div>
 		</div>
 	</div>

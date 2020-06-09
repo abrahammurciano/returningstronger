@@ -158,6 +158,10 @@ input[type='submit'].loading:hover {
 	margin-bottom: 50px;
 }
 
+.count {
+	font-family: inherit;
+}
+
 .name {
 	font-size: 36px;
 	margin: 20px;

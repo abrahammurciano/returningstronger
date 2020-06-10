@@ -1,3 +1,5 @@
+<?php /*header("Location: https://rebrand.ly/ReturningStronger");*/ ?>
+
 <!DOCTYPE html>
 
 <head>

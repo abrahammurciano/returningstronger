@@ -45,7 +45,7 @@
 		<?php
 
 		$names = "";
-		$count = 0;
+		$count = 30;
 
 		$handle = fopen("names.dat", "r");
 		if ($handle) {
@@ -66,6 +66,7 @@
 			<div class="names">
 				<?php echo ($names); ?>
 			</div>
+			<div class="resubmit">We're sorry, due to some technical difficulties some names were lost. If you want to add your name again, please <a href="javascript:localStorage.clear();location.reload();">click here</a>.</div>
 		</div>
 	</div>
 	<div class="am-design-wrapper">

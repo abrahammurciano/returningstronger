@@ -168,6 +168,11 @@ input[type='submit'].loading:hover {
 	text-transform: capitalize;
 }
 
+.resubmit {
+	max-width: 800px;
+	margin: auto;
+}
+
 
 /* AM Design Logo */
 
